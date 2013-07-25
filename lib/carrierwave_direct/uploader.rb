@@ -65,6 +65,7 @@ module CarrierWaveDirect
 
       conditions = [
         ["starts-with", "$utf8", ""],
+        ["starts-with", "$player_status", ""],
         ["starts-with", "$key", key.sub(/#{Regexp.escape(FILENAME_WILDCARD)}\z/, "")]
       ]
       conditions << ["starts-with", "$Content-Type", ""] if self.class.will_include_content_type
